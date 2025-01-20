@@ -18,6 +18,7 @@ const init = async () => {
   })
 
   // consume/ambil queue export:notes dengan menetapkan listener.listen sebagai fungsi callback-nya (message)
+  // noAck: true, tandanya consumer mengonfirmasi bahwa pesan sudah diambil dari queue, sehingga langsung dihapus dari queue
   channel.consume('export:notes', listener.listen, { noAck: true })
 }
 
